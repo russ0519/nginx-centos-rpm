@@ -1,0 +1,3 @@
+The purpose of this project is to provide CentOS rpms for the latest stable nginx with certain third party modules. 
+Current included third party modules:
+* Nginx Upload Progress Module 
