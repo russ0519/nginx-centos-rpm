@@ -59,6 +59,7 @@ extern ngx_module_t  ngx_http_image_filter_module;
 extern ngx_module_t  ngx_http_sub_filter_module;
 extern ngx_module_t  ngx_http_addition_filter_module;
 extern ngx_module_t  ngx_http_userid_filter_module;
+extern ngx_module_t  ngx_http_uploadprogress_module;
 extern ngx_module_t  ngx_http_headers_filter_module;
 extern ngx_module_t  ngx_http_copy_filter_module;
 extern ngx_module_t  ngx_http_range_body_filter_module;
@@ -128,6 +129,7 @@ ngx_module_t *ngx_modules[] = {
     &ngx_http_sub_filter_module,
     &ngx_http_addition_filter_module,
     &ngx_http_userid_filter_module,
+    &ngx_http_uploadprogress_module,
     &ngx_http_headers_filter_module,
     &ngx_http_copy_filter_module,
     &ngx_http_range_body_filter_module,

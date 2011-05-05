@@ -114,6 +114,9 @@ MAIL_DEPS = src/mail/ngx_mail.h \
 MAIL_INCS = -I src/mail
 
 
+ADDON_DEPS = $(CORE_DEPS)  $(HTTP_DEPS)
+
+
 objs/nginx:	objs/src/core/nginx.o \
 	objs/src/core/ngx_log.o \
 	objs/src/core/ngx_palloc.o \
@@ -247,6 +250,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/mail/ngx_mail_smtp_handler.o \
 	objs/src/mail/ngx_mail_auth_http_module.o \
 	objs/src/mail/ngx_mail_proxy_module.o \
+	objs/addon/nginx-upload-progress-module/ngx_http_uploadprogress_module.o \
 	objs/ngx_modules.o \
 	objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so
 
@@ -384,6 +388,7 @@ objs/nginx:	objs/src/core/nginx.o \
 	objs/src/mail/ngx_mail_smtp_handler.o \
 	objs/src/mail/ngx_mail_auth_http_module.o \
 	objs/src/mail/ngx_mail_proxy_module.o \
+	objs/addon/nginx-upload-progress-module/ngx_http_uploadprogress_module.o \
 	objs/ngx_modules.o \
 	-lcrypt -lpcre -lssl -lcrypto -ldl -lz -lxml2 -lxslt -lexslt -lgd -lGeoIP \
 	-Wl,-E -Wl,-rpath,/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/CORE /usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/auto/DynaLoader/DynaLoader.a -L/usr/lib64/perl5/5.8.8/x86_64-linux-thread-multi/CORE -lperl -lresolv -lnsl -ldl -lm -lcrypt -lutil -lpthread -lc
@@ -1326,6 +1331,13 @@ objs/src/mail/ngx_mail_proxy_module.o:	$(CORE_DEPS) $(MAIL_DEPS) \
 	$(CC) -c $(CFLAGS) $(CORE_INCS) $(MAIL_INCS) \
 		-o objs/src/mail/ngx_mail_proxy_module.o \
 		src/mail/ngx_mail_proxy_module.c
+
+
+objs/addon/nginx-upload-progress-module/ngx_http_uploadprogress_module.o:	$(ADDON_DEPS) \
+	/home/mockbuild/rpmbuild/BUILD/nginx-1.0.1/nginx-upload-progress-module/ngx_http_uploadprogress_module.c
+	$(CC) -c $(CFLAGS)  $(ALL_INCS) \
+		-o objs/addon/nginx-upload-progress-module/ngx_http_uploadprogress_module.o \
+		/home/mockbuild/rpmbuild/BUILD/nginx-1.0.1/nginx-upload-progress-module/ngx_http_uploadprogress_module.c
 
 
 objs/src/http/modules/perl/blib/arch/auto/nginx/nginx.so:				src/http/modules/perl/nginx.pm						src/http/modules/perl/nginx.xs						src/http/modules/perl/ngx_http_perl_module.h				objs/src/http/modules/perl/Makefile

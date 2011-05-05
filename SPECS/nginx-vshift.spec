@@ -9,7 +9,7 @@
 
 Name:           nginx
 Version:        1.0.1
-Release:        2.vshift%{?dist}
+Release:        3.vshift%{?dist}
 Summary:        Robust, small and high performance HTTP and reverse proxy server
 Group:          System Environment/Daemons   
 
@@ -37,6 +37,7 @@ Source3:    virtual.conf
 Source4:    ssl.conf
 Source5:    %{name}.sysconfig
 Source6:    nginx.conf
+Source7:    nginx-upload-progress-module-v0.8.2-0.tar.gz
 Source100:  index.html
 Source101:  poweredby.png
 Source102:  nginx-logo.png
@@ -51,11 +52,16 @@ Patch0:     nginx-auto-cc-gcc.patch
 Nginx [engine x] is an HTTP(S) server, HTTP(S) reverse proxy and IMAP/POP3
 proxy server written by Igor Sysoev.
 
+Following third party modules added:
+* nginx_uploadprogress
+
 %prep
 %setup -q
 
 %patch0 -p0
 
+%{__tar} zxvf %{SOURCE7}
+mv masterzen-nginx-upload-progress-module* nginx-upload-progress-module
 %build
 # nginx does not utilize a standard configure script.  It has its own
 # and the standard configure options cause the nginx configure script
@@ -98,7 +104,8 @@ export DESTDIR=%{buildroot}
     --with-mail_ssl_module \
     --with-ipv6 \
     --with-cc-opt="%{optflags} $(pcre-config --cflags)" \
-    --with-cc-opt="%{optflags} $(pcre-config --cflags)"
+    --add-module=%{_builddir}/nginx-%{version}/nginx-upload-progress-module 
+
 make %{?_smp_mflags} 
 
 %install
@@ -189,6 +196,9 @@ fi
 
 
 %changelog
+* Thu May 5 2011 Ruslan Sivak <russ at vshift dot com> - 1.0.1-3
+- Adding nginx upload_progress module
+
 * Thu May 5 2011 Ruslan Sivak <russ at vshift dot com> - 1.0.1-2
 - Deleting extra . in rpm name
 
