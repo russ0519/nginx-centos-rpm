@@ -1,0 +1,13 @@
+%dir /usr/lib/debug
+%dir /usr/lib/debug/usr
+%dir /usr/lib/debug/usr/sbin
+%dir /usr/lib/debug/usr/lib64
+%dir /usr/lib/debug/usr/lib64/perl5
+%dir /usr/lib/debug/usr/lib64/perl5/vendor_perl
+%dir /usr/lib/debug/usr/lib64/perl5/vendor_perl/5.8.8
+%dir /usr/lib/debug/usr/lib64/perl5/vendor_perl/5.8.8/x86_64-linux-thread-multi
+%dir /usr/lib/debug/usr/lib64/perl5/vendor_perl/5.8.8/x86_64-linux-thread-multi/auto
+%dir /usr/lib/debug/usr/lib64/perl5/vendor_perl/5.8.8/x86_64-linux-thread-multi/auto/nginx
+/usr/lib/debug/usr/sbin/nginx.debug
+/usr/lib/debug/usr/lib64/perl5/vendor_perl/5.8.8/x86_64-linux-thread-multi/auto/nginx/nginx.so.debug
+/usr/src/debug/nginx-1.0.1
