@@ -162,7 +162,7 @@ gcc -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --
 ----------------------------------------
 checking for crypt()
 
-/tmp/ccv434tn.o: In function `main':
+/tmp/ccItzdjd.o: In function `main':
 /home/mockbuild/rpmbuild/BUILD/nginx-1.0.1/objs/autotest.c:7: undefined reference to `crypt'
 collect2: ld returned 1 exit status
 ----------
@@ -275,7 +275,7 @@ objs/autotest.c:9: warning: null argument where non-null required (argument 1)
 ----------------------------------------
 checking for dlopen()
 
-/tmp/ccx9F545.o: In function `main':
+/tmp/ccRJBhSM.o: In function `main':
 /home/mockbuild/rpmbuild/BUILD/nginx-1.0.1/objs/autotest.c:7: undefined reference to `dlopen'
 collect2: ld returned 1 exit status
 ----------
@@ -523,7 +523,7 @@ checking for setproctitle()
 
 objs/autotest.c: In function 'main':
 objs/autotest.c:7: warning: implicit declaration of function 'setproctitle'
-/tmp/ccCYli3q.o: In function `main':
+/tmp/ccVBDlsg.o: In function `main':
 /home/mockbuild/rpmbuild/BUILD/nginx-1.0.1/objs/autotest.c:7: undefined reference to `setproctitle'
 collect2: ld returned 1 exit status
 ----------
@@ -552,7 +552,7 @@ checking for pwrite()
 ----------------------------------------
 checking for sys_nerr
 
-/tmp/cci2x16G.o: In function `main':
+/tmp/ccb2NF1w.o: In function `main':
 /home/mockbuild/rpmbuild/BUILD/nginx-1.0.1/objs/autotest.c:7: warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
 
 ----------------------------------------

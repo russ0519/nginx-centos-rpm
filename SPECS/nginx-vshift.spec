@@ -9,7 +9,7 @@
 
 Name:           nginx
 Version:        1.0.1
-Release:        1.vshift.%{?dist}
+Release:        2.vshift%{?dist}
 Summary:        Robust, small and high performance HTTP and reverse proxy server
 Group:          System Environment/Daemons   
 
@@ -189,6 +189,9 @@ fi
 
 
 %changelog
+* Thu May 5 2011 Ruslan Sivak <russ at vshift dot com> - 1.0.1-2
+- Deleting extra . in rpm name
+
 * Thu May 5 2011 Ruslan Sivak <russ at vshift dot com> - 1.0.1-1
 - Update to new stable 1.0.1 release
 
