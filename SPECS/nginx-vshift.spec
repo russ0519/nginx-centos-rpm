@@ -8,8 +8,8 @@
 %define nginx_webroot   %{nginx_datadir}/html
 
 Name:           nginx
-Version:        1.0.1
-Release:        3.vshift%{?dist}
+Version:        1.0.2
+Release:        1.vshift%{?dist}
 Summary:        Robust, small and high performance HTTP and reverse proxy server
 Group:          System Environment/Daemons   
 
@@ -196,6 +196,9 @@ fi
 
 
 %changelog
+* Mon May 16 2011 Ruslan Sivak <russ at vshift dot com> - 1.0.2-1
+- Update to new stable 1.0.2 release
+
 * Thu May 5 2011 Ruslan Sivak <russ at vshift dot com> - 1.0.1-3
 - Adding nginx upload_progress module
 
